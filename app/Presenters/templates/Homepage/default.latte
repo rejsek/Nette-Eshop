@@ -1,0 +1,78 @@
+{block content}
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.tonyImage {
+      		margin-top: 5%;
+     		margin-left: 10%;
+			margin-right: 10%;
+			float: left;
+    	}
+		
+		.textTony {
+			margin-top: 10%;		
+		}
+
+		.buttonTony {
+			border-radius: 4px;
+  			background-color: red;/*nevim barvu*/
+  			border: none;
+  			color: #FFFFFF;
+  			text-align: center;
+  			font-size: 28px;
+  			padding: 20px;
+  			width: 200px;
+  			transition: all 0.5s;
+  			cursor: pointer;
+  			margin-top: 10px;
+		}
+
+		.buttonTony span {
+			display: inline-block;
+			position: relative;
+			transition: 0.5s;	
+		}
+
+		.buttonTony span:after {
+			content: '\00bb';
+			position: absolute;
+			opacity: 0;
+			top: 0;
+			right: -20px;
+			transition: 0.5s;
+		}
+
+		.buttonTony:hover span {
+			padding-right: 25px;
+		}
+
+		.buttonTony:hover span:after {
+			opacity: 1;
+			right: 0;
+		}
+	</style>
+	
+	{block backgroundImage}
+		<img src='../www/Obrazky/skejtak.jpg' width="100%" height="auto">	
+	{/block}
+
+	{block tonyImage}
+			<img class="tonyImage" src='../www/Obrazky/tony.jpg' width="40%" height="auto">
+	{/block}
+
+	{block textVedleTonyho}
+		<div class="textTony">
+			<p class="text-muted">NOVINKA</p>
+			
+			<p class="fs-3">KOMPLETY TONY HAWK</p>
+			
+			<p class="fw-lighter">Nové modely právě dorazily a jsou na skladě.<br> Za designem stojí Tony Hawk.</p>
+			
+			<button class="buttonTony">
+				<span>
+					Zjistit více
+				</span>
+			</button>
+		</div>	
+	{/block}
+{/block}

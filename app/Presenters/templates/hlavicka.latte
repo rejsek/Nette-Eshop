@@ -1,0 +1,82 @@
+{block menu}
+  <style>
+    /*.logo {
+      display: inline-block;
+      vertical-align: top;
+      width: 200%;
+      height: 100%;
+      margin-right: 20px;
+      float:left;
+    }*/
+    
+    nav {
+      background-color: white;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      text-align: center;
+      /*position: fixed;
+      left: 25%;
+      top: 0;*/
+    }
+
+    li {
+      display: inline-block;
+      position: relative;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      font-family: Arial;
+      margin-left: 70px;
+      margin-right: 70px;
+      font-size: 20px
+    }
+
+    a:hover {
+      color: black;
+    }
+    
+    li::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: black;
+      transition: width 0.25s ease-out;
+    }
+
+    li:hover::before {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+
+  </style>
+
+  <!--<div class="logo">
+      <img src="Logo/logo.jpg" height="5%" width="5%" style="float:left">
+  </div>-->
+  
+  <nav>
+    <ul>
+      <li>
+        <a n:href="Homepage:">Skateboarding</a>
+      </li>
+      
+      <li>
+        <a href="">Komplety</a>
+      </li>
+      
+      <li>
+        <a href="">Boty</a>
+      </li>
+      
+      <li>
+        <a href="">Oblečení</a>
+      </li>
+    </ul>  
+  </nav>
+{/block}
