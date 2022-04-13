@@ -7,5 +7,6 @@ namespace App\Presenters;
 use Nette;
 use Nette\Application\UI\Form;
 
-final class HomepagePresenter extends Nette\Application\UI\Presenter {
+final class KompletypagePresenter extends Nette\Application\UI\Presenter {
+    
 }

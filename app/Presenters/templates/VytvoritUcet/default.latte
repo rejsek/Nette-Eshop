@@ -1,0 +1,38 @@
+{block content}	
+	<style>
+        .komplet {
+            background-color: rgba(0, 0, 0, 0.05);
+            border: 1px solid #1390f0;
+            width: 50%;
+            height: 30vh;
+            margin-left: 25%;
+            border-radius: 25px;
+            margin-bottom: 6%;
+            margin-top: 6%;
+        }
+        
+        h1 {
+            padding-top: 2%;
+            text-align: center;
+            
+        }
+
+        .form {
+            margin-top: 4%;
+            margin-left: 34%;
+        }
+
+		.required label {
+			margin-right: 30px;
+		}
+
+    </style>
+    
+    <div class="komplet">
+        <h1>Vytvořit účet</h1>
+
+        <div class="form">
+            {control createForm}
+        </div>
+    </div>
+{/block}

@@ -1,0 +1,78 @@
+{block content}
+	<style>
+		.backgroundSkate {
+			background-image: url("http://cdn.shopify.com/s/files/1/0519/1388/3831/collections/nike-sb-shoes-022321.jpg?v=1622162158");
+			background-size: cover;
+    		background-repeat: no-repeat;
+    		height: 49vh;
+			color: white;
+			font-family: Arial;
+			font-weight: bold;
+			font-size: 60px;
+		}
+
+		#textSkate {
+			position: relative;
+			top: 25%;
+			left: 37%;
+		}
+
+		.products {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			padding: 100px;
+		}
+
+		.item {
+			text-align: center;
+			padding-bottom: 10px;
+			transition: 0.3s;
+		}
+
+		.item:hover {
+			/*box-shadow: 0.5px 0.5px 3.5px 3.5px #1390f0;*/
+		}
+
+		img {
+			transition: 0.3s;
+		}
+
+		img:hover {
+			/*filter: brightness(90%);*/
+			opacity: 0.8;
+		}
+
+		a {
+			color: black;
+			transition: 0.3s;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #1390f0;
+		}
+	</style>
+	
+	{block backgroundKomplet}
+		<div class="backgroundSkate">
+			<p id="textSkate">BOTY NA SKATE</p>
+		</div>
+	{/block}
+
+	{block products}
+		<div class="products">
+			
+			{foreach $boty as $bota}
+				<div class="item">
+					<a n:href="Detailpage:show, $bota->id_pr">
+						<img src='{$bota->obrazek}' height="70%" width="70%">
+							
+						<p style="font-size: 20px;">{$bota->nazev_pr}</p>
+						<p style="font-size: 17px;">{$bota->cena} Kč</p>
+					</a>
+				</div>
+			{/foreach}	
+		
+		</div>
+	{/block}
+{/block}

@@ -2,27 +2,35 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
+		/*		Tony image		*/
+		
 		.tonyImage {
       		margin-top: 5%;
-     		margin-left: 10%;
+     		margin-left: 5%;
 			margin-right: 10%;
 			float: left;
+			transition: 1s;
     	}
+
+		.tonyImage:hover {
+			opacity: 0.5;
+		}
 		
 		.textTony {
-			margin-top: 10%;		
+			margin-top: 10%;
+			text-align: center;		
 		}
 
 		.buttonTony {
 			border-radius: 4px;
-  			background-color: red;/*nevim barvu*/
+  			background-color: #1390f0;/*nevim barvu*/
   			border: none;
   			color: #FFFFFF;
   			text-align: center;
   			font-size: 28px;
   			padding: 20px;
   			width: 200px;
-  			transition: all 0.5s;
+  			transition: all 0.3s;
   			cursor: pointer;
   			margin-top: 10px;
 		}
@@ -50,14 +58,75 @@
 			opacity: 1;
 			right: 0;
 		}
+
+		/*		Image novyBoty		*/
+
+		.botyImage {
+			margin-top: 5%;
+     		margin-left: 10%;
+			margin-right: 5%;
+			float: right;
+			transition: 1s;
+		}
+		
+		.botyImage:hover {
+			opacity: 0.5;
+		}
+
+		.textBoty {
+			margin-top: 28%;	
+			text-align: center;
+		}
+
+		.buttonBoty {
+			border-radius: 4px;
+  			background-color: #1390f0;
+  			border: none;
+  			color: #FFFFFF;
+  			text-align: center;
+  			font-size: 28px;
+  			padding: 20px;
+  			width: 200px;
+  			transition: all 0.3s;
+  			cursor: pointer;
+  			margin-top: 10px;
+			/*margin-left: 34.4%;*/
+			margin-bottom: 20%;
+		}
+
+		.buttonBoty span {
+			display: inline-block;
+			position: relative;
+			transition: 0.5s;	
+		}
+
+		.buttonBoty span:after {
+			content: '\00bb';
+			position: absolute;
+			opacity: 0;
+			top: 0;
+			right: -20px;
+			transition: 0.5s;
+		}
+
+		.buttonBoty:hover span {
+			padding-right: 25px;
+		}
+
+		.buttonBoty:hover span:after {
+			opacity: 1;
+			right: 0;
+		}
 	</style>
 	
 	{block backgroundImage}
-		<img src='../www/Obrazky/skejtak.jpg' width="100%" height="auto">	
+		<img src='../www/Obrazky/skejtak.jpg' width="100%" height="auto">
 	{/block}
 
 	{block tonyImage}
-			<img class="tonyImage" src='../www/Obrazky/tony.jpg' width="40%" height="auto">
+			<a n:href="Kompletypage:">
+				<img class="tonyImage" src='../www/Obrazky/tony.jpg' width="40%" height="auto">
+			</a>
 	{/block}
 
 	{block textVedleTonyho}
@@ -68,11 +137,36 @@
 			
 			<p class="fw-lighter">Nové modely právě dorazily a jsou na skladě.<br> Za designem stojí Tony Hawk.</p>
 			
-			<button class="buttonTony">
-				<span>
-					Zjistit více
-				</span>
-			</button>
+			<a n:href="Kompletypage:">
+				<button class="buttonTony">
+					<span>
+						Zjistit více
+					</span>
+				</button>
+			</a>
 		</div>	
+	{/block}
+
+	{block novyBotyImage}
+		<a n:href="Botypage:">
+			<img class="botyImage" src='../www/Obrazky/boty.jpg' width="40%" height="auto">	
+		</a>
+	{/block}
+
+	{block textVedleBot}
+		<div class="textBoty">
+			<p class="fs-3">SKATE BOTY	</p>
+			
+			<p class="fw-lighter">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<br> 
+			Interdum ultricies, scelerisque eu. Suspendisse sagittis ultrices augue. Aliquam erat volutpat.</p>
+			
+			<a n:href="Botypage:">
+				<button class="buttonBoty">
+					<span>
+						Zjistit více
+					</span>
+				</button>
+			</a>
+		</div>		
 	{/block}
 {/block}

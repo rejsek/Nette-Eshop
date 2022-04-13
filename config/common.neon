@@ -19,3 +19,8 @@ di:
 
 services:
 	- App\Router\RouterFactory::createRouter
+	- App\Forms\LoginFormFactory
+	- App\Forms\CreateFormFactory
+	- App\Forms\AddProductFactory
+	- App\Models\dbManager
+	- App\Models\myAuthenticator

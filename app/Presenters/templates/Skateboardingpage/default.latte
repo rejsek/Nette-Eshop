@@ -1,0 +1,128 @@
+{block content}
+	<style>
+		.backgroundSkate {
+			background-image: url("../Obrazky/hardware5.jpg");
+			background-size: cover;
+    		background-repeat: no-repeat;
+    		height: 49vh;
+			color: white;
+			font-family: Arial;
+			font-weight: bold;
+			font-size: 60px;
+		}
+
+		#textSkate {
+			position: absolute;
+			top: 28%;
+			left: 37%;
+		}
+
+		.buttons {
+			text-align: center;
+			margin-top: 2%;
+		}
+
+		button {
+			width: 8%;
+			height: 5vh;
+			margin-right: 2%;
+			background-color: rgba(19, 144, 240, 0.9); 
+			border: none;
+			border-radius: 4px;
+			color: white;
+			font-size: 19px;
+			transition: 0.3s;
+		}
+
+		button:hover {
+			opacity: 0.8;
+		}
+
+		.products {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			padding: 100px;
+		}
+
+		.item {
+			text-align: center;
+			padding-bottom: 10px;
+			transition: 0.3s;
+		}
+
+		.item:hover {
+			/*box-shadow: 0.5px 0.5px 3.5px 3.5px #1390f0;*/
+		}
+
+		img {
+			transition: 0.3s;
+		}
+
+		img:hover {
+			/*filter: brightness(90%);*/
+			opacity: 0.8;
+		}
+
+		a {
+			color: black;
+			transition: 0.3s;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #1390f0;
+		}
+
+	</style>
+	
+	{block backgroundKomplet}
+		<div class="backgroundSkate">
+			<p id="textSkate">SKATEBOARDING</p>
+		</div>
+	{/block}
+		
+	{block buttons}
+		<div class="buttons">
+			<a href="">
+				<button>Nářadí</button>
+			</a>
+			
+			<a href="">
+				<button>Ložiska</button>
+			</a>
+			
+			<a href="">
+				<button>Kolečka</button>
+			</a>
+			
+			<a href="">
+				<button>Griptape</button>
+			</a>
+			
+			<a href="">
+				<button>Desky</button>
+			</a>
+			
+			<a href="">
+				<button>Trucky</button>
+			</a>
+		</div>
+	{/block}
+	
+	{block products}
+		<div class="products">
+			
+			{foreach $produkty as $produkt}
+				<div class="item">
+					<a n:href="Detailpage:show, $produkt->id_pr">
+						<img src='{$produkt->obrazek}' height="70%" width="70%">
+							
+						<p style="font-size: 20px;">{$produkt->nazev_pr}</p>
+						<p style="font-size: 17px;">{$produkt->cena} Kč</p>
+					</a>
+				</div>
+			{/foreach}	
+		
+		</div>
+	{/block}
+{/block}

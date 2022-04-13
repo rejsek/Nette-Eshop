@@ -1,0 +1,146 @@
+{block header}
+  <style>
+    /*.logo {
+      height: 10%;
+      width: 10%;
+      float: left;
+    }*/
+    
+    nav {
+      background-color: white;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      text-align: center;
+      /*position: fixed;
+      left: 25%;
+      top: 0;*/
+    }
+
+    li {
+      display: inline-block;
+      position: relative;
+    }
+
+    li a {
+      text-decoration: none;
+      color: black;
+      font-family: Arial;
+      margin-left: 70px;
+      margin-right: 70px;
+      font-size: 25px
+    }
+
+    li a:hover {
+      color: black;
+    }
+    
+    li a::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: black;
+      transition: width 0.25s ease-out;
+    }
+
+    li a:hover::before {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+
+    header button {
+      border-radius: 4px;
+  		background-color: #1390f0;/*nevim barvu*/
+  		border: none;
+  		color: #FFFFFF;
+      transition: 0.4s;
+      float: right;
+      margin-right: 20px;
+      font-size: 17px;
+			width: 8%;
+			height: 5vh;
+			margin-right: 2%;
+			background-color: rgba(19, 144, 240, 0.9); 
+			border: none;
+			border-radius: 4px;
+			color: white;
+			font-size: 19px;
+			transition: 0.3s;
+    }
+
+    header button:hover {
+      opacity: 0.5;
+    }
+
+    header button span {
+      margin: 15px;
+    }
+
+    button a {
+      text-decoration: none;
+      color: white;
+    }
+
+    button a:hover {
+      color: white;
+    }
+
+  </style>
+
+  <!--<div class="logo">
+      <a n:href="Homepage:">
+        <img src="../www/Obrazky/logo.jpg" height="auto" width="100%">
+      </a>
+  </div>-->
+
+  <header>
+    <button>
+        <a n:href="Prihlasit:">
+          <span>
+            Přihlásit
+          </span>
+        </a>
+    </button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Přihlásit se k účtu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="margin-left: 15%; text-align: center;">
+            <!--Control nemuze najit componentu-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li>
+          <a n:href="Homepage:">Domů</a>
+        </li>
+        
+        <li>
+          <a n:href="Skateboardingpage:">Skateboarding</a>
+        </li>
+        
+        <li>
+          <a n:href="Kompletypage:">Komplety</a>
+        </li>
+        
+        <li>
+          <a n:href="Botypage:">Boty</a>
+        </li>
+        
+        <li>
+          <a href="">Oblečení</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+{/block}
