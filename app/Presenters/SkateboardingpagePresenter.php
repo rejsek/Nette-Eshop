@@ -16,12 +16,18 @@ final class SkateboardingpagePresenter extends Nette\Application\UI\Presenter {
         $this->dbManager = $dbManager;
     }
 
+    /**
+     * Metoda zobrazuje produkty z databáze
+     */
+    
     public function renderDefault() {
-        //$this->template->connect = "Beha";
-
         $this->vypisProduktu();
     }
 
+    /**
+     * 
+     */
+    
     public function vypisProduktu() {
         $produkty = $this->dbManager->vypisProduktu();
 

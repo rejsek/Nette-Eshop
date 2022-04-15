@@ -46,6 +46,8 @@
 
         /**
          * Metoda pro zobrazeni detailu produktu na zaklade vstupniho id
+         * 
+         * @param $id_pr: id produktu
          */
         
         public function detailProduktu($id_pr) {
@@ -54,6 +56,15 @@
             return $detail;
         }
 
+        /**
+         * Metoda pro přidání uživatele do databáze
+         * 
+         * @param $jmeno: jmeno uzivatele
+         * @param $prijmeni: prijmeni uzivatele
+         * @param $email: email uzivatele
+         * @param $heslo: heslo uzivatele
+         */
+        
         public function vlozUzivateleDoDB($jmeno, $prijmeni, $email, $heslo) {
             //bdump($data);
 
@@ -66,6 +77,12 @@
             ]);
         }
 
+        /**
+         * Metoda pro přidání produktu do databáze
+         * 
+         * @param $data: data získaná z formuláře
+         */
+        
         public function vlozProduct($data) {
             bdump($data);
 

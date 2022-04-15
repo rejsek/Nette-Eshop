@@ -16,6 +16,10 @@ final class BotypagePresenter extends Nette\Application\UI\Presenter {
         $this->dbManager = $dbManager;
     }
 
+    /**
+     * Metoda zobrazuje produkty z databáze
+     */
+    
     public function renderDefault() {
         $this->vypisProduktu();
     }

@@ -18,26 +18,27 @@ final class PridatProductPresenter extends Nette\Application\UI\Presenter {
         $this->addForm = $addForm;
         $this->database = $database;
     }
-    
-    public function renderDefault() {
-        //$this->template->pozdrav = "Funguje";
-    }
 
+    /**
+     * Metoda zobrazující formulář pro přidání produktu
+     */
+    
     public function createComponentAddForm(): Form {
         $form = $this->addForm->create();
         $form->onSuccess[] = [$this, 'formSucceeded'];
         return $form;
     }
 
+    /**
+     * Metoda, která proběhne po stisku tlačítka u formuláře
+     * Pošle data do dbManageru
+     */
+    
     public function formSucceeded(Form $form, $data): void {
         $this->flashMessage('Přidáno');
         $this->database->vlozProduct($data);
-        
-        /*$data->name;
-        $data->password;*/
-
+        $this->redirect('Homepage:');
         bdump($data);
-        //$this->redirect('Homepage:');
     }
 }
 ?>

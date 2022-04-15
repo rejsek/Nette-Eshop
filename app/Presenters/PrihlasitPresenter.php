@@ -18,17 +18,22 @@ final class PrihlasitPresenter extends Nette\Application\UI\Presenter {
         $this->loginForm = $loginForm;
         $this->authenticator = $authenticator;
     }
-    
-    public function renderDefault() {
-        //$this->template->pozdrav = "Funguje";
-    }
 
+    /**
+     * Metoda zobrazující formulář pro přihlášení
+     */
+    
     public function createComponentLoginForm(): Form {
         $form = $this->loginForm->create();
         $form->onSuccess[] = [$this, 'formSucceeded'];
         return $form;
     }
 
+    /**
+     * Metoda udává co se stane, když se užiatel snaží přihlásit
+     * Při špatném zadání údajů se vykoná větev catch a při správných údajích se vykoná zase větev try
+     */
+    
     public function formSucceeded(Form $form, $data): void {
         try {
             $user = $this->getUser();
@@ -41,11 +46,12 @@ final class PrihlasitPresenter extends Nette\Application\UI\Presenter {
             $this->flashMessage('Spatne udaje.');
             bdump($data);
         }
-        
-        /*$data->name;
-        $data->password;*/
     }
 
+    /**
+     * Metoda pro odhlášení uživatele
+     */
+    
     public function actionOut() {
         $this->getUser()->logout();
         $this->flashMessage('Odhlášení');
