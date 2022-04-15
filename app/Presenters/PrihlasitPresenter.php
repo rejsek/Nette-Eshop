@@ -39,10 +39,17 @@ final class PrihlasitPresenter extends Nette\Application\UI\Presenter {
             $this->redirect('Homepage:');
         } catch(Nette\Security\AuthenticationException $e) {
             $this->flashMessage('Spatne udaje.');
+            bdump($data);
         }
         
         /*$data->name;
         $data->password;*/
+    }
+
+    public function actionOut() {
+        $this->getUser()->logout();
+        $this->flashMessage('Odhlášení');
+        $this->redirect('Homepage:');
     }
 }
 ?>

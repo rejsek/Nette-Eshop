@@ -35,14 +35,16 @@ final class VytvoritUcetPresenter extends Nette\Application\UI\Presenter {
     public function formSucceeded(Form $form, $data): void {
         $this->flashMessage('Účet byl vytvořen.');
         
-        $email = $data->email;
-        
-        $passwords = $data->heslo;
+        /*$passwords = $data->heslo;
         $hash = $this->passwords->hash($passwords);
         
-        //bdump();
-        $this->database->vlozUzivateleDoDB($data);
-        //$this->redirect('Homepage:');
+        $replacePassword = array('3' => $hash);
+        
+        $data = array_replace($replacePassword);
+        
+        bdump($data);*/
+        $this->database->vlozUzivateleDoDB($data->jmeno, $data->prijmeni, $data->email, $data->heslo);
+        $this->redirect('Homepage:');
     }
 }
 ?>

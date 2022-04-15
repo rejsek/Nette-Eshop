@@ -1,7 +1,7 @@
 {block content}
 	<style>
 		.backgroundKomplet {
-			background-image: url("../Obrazky/komplet.jpg");
+			background-image: url("../Obrazky/komplety.jpg");
 			background-size: cover;
     		background-repeat: no-repeat;
     		height: 49vh;
@@ -12,15 +12,98 @@
 		}
 
 		#textKomplet {
-			position: relative;
-			top: 25%;
-			left: 41%;
+			position: absolute;
+			top: 28%;
+			left: 42%;
 		}
+
+		.products {
+			display: grid;
+			grid-template-columns: auto auto auto;
+			padding: 100px;
+		}
+
+		.item {
+			text-align: center;
+			padding-bottom: 10px;
+			transition: 0.3s;
+		}
+
+		.item:hover {
+			/*box-shadow: 0.5px 0.5px 3.5px 3.5px #1390f0;*/
+		}
+
+		img {
+			transition: 0.3s;
+		}
+
+		img:hover {
+			/*filter: brightness(90%);*/
+			opacity: 0.8;
+		}
+
+		a {
+			color: black;
+			transition: 0.3s;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #1390f0;
+		}
+
+		@media only screen and (max-width: 600px) {
+			.backgroundKomplet {
+				height: 30vh;
+				font-size: 30px;	
+			}
+
+			#textKomplet {
+				position: static;
+				padding-top: 31%;
+				padding-left: 31%;
+			}
+
+			.buttons {
+				display: grid;
+				grid-template-columns: auto auto auto;
+				column-gap: 10px;
+				row-gap: 10px;
+			}
+			
+			.buttons button {
+				width: 100%;
+			}
+
+			.products {
+				margin-top: 10%;
+				display: grid;
+				grid-template-columns: auto;
+				padding: 0px;
+			}
+      	}
 	</style>
 	
 	{block backgroundKomplet}
 		<div class="backgroundKomplet">
 			<p id="textKomplet">KOMPLETY</p>
+		</div>
+	{/block}
+
+	{block products}
+		<div class="products">
+			
+			{foreach $komplety as $komplet}
+				<div class="item">
+					<a n:href="Detailpage:show, $komplet->id_pr">
+						<img src='{$komplet->obrazek}' height="70%" width="70%">
+							
+						<p style="font-size: 20px;">{$komplet->nazev_pr}</p>
+						<p style="font-size: 17px;">{$komplet->cena} Kč</p>
+					</a>
+				</div>
+			{/foreach}	
+		
 		</div>
 	{/block}
 {/block}

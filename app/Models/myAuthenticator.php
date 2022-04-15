@@ -29,8 +29,8 @@
             }
 
             return new SimpleIdentity(
-                $row->idusers,
-                $row->role, // nebo pole více rolí
+                $row->id_uz,
+                $row->id_role, // nebo pole více rolí
                 ['email' => $row->email]
             );
         }

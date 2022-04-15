@@ -8,12 +8,9 @@
     
     nav {
       background-color: white;
-      margin-top: 50px;
+      margin-top: 0px;
       margin-bottom: 50px;
-      text-align: center;
-      /*position: fixed;
-      left: 25%;
-      top: 0;*/
+      margin-left: 22%;
     }
 
     li {
@@ -34,7 +31,7 @@
       color: black;
     }
     
-    li a::before {
+    li a:before {
       content: "";
       position: absolute;
       right: 0;
@@ -45,102 +42,88 @@
       transition: width 0.25s ease-out;
     }
 
-    li a:hover::before {
+    li a:hover:before {
       width: 100%;
       left: 0;
       right: auto;
     }
 
-    header button {
-      border-radius: 4px;
-  		background-color: #1390f0;/*nevim barvu*/
-  		border: none;
-  		color: #FFFFFF;
+    .tlacitko {
+      text-align: right;
+      margin-right: 1%;
+      margin-top: 1%;
+    }
+    
+    .tlacitko button {
+      background-color: #1390f0;
+  		border: none;  
+      color: #FFFFFF;
       transition: 0.4s;
-      float: right;
-      margin-right: 20px;
-      font-size: 17px;
-			width: 8%;
-			height: 5vh;
-			margin-right: 2%;
-			background-color: rgba(19, 144, 240, 0.9); 
-			border: none;
-			border-radius: 4px;
-			color: white;
-			font-size: 19px;
-			transition: 0.3s;
+      font-size: 19px;
+      height: 5vh;
+      border-radius: 4px;
     }
 
-    header button:hover {
+    .tlacitko button:hover {
       opacity: 0.5;
     }
 
-    header button span {
+    .tlacitko button span {
       margin: 15px;
     }
-
-    button a {
-      text-decoration: none;
-      color: white;
-    }
-
-    button a:hover {
-      color: white;
+    
+    @media only screen and (max-width: 600px) {
+      nav {
+        margin-left: 0%;
+      }
     }
 
   </style>
 
-  <!--<div class="logo">
-      <a n:href="Homepage:">
-        <img src="../www/Obrazky/logo.jpg" height="auto" width="100%">
-      </a>
-  </div>-->
-
-  <header>
-    <button>
-        <a n:href="Prihlasit:">
+  <div class="tlacitko">
+    <a n:href="Prihlasit:">
+      <button>
           <span>
-            Přihlásit
-          </span>
-        </a>
-    </button>
+              Přihlásit
+            </span>
+        </button>
+    </a>
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Přihlásit se k účtu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" style="margin-left: 15%; text-align: center;">
-            <!--Control nemuze najit componentu-->
-          </div>
+    <a n:href="Prihlasit:out">
+      <button>
+          <span>
+              Odhlasit se
+            </span>
+        </button>
+    </a>
+  </div>
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light ">      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <ul>
+            <li>
+              <a class="nav-item nav-link" n:href="Homepage:">Domů</a>
+            </li>
+            
+            <li>
+              <a class="nav-item nav-link" n:href="Skateboardingpage:">Skateboarding</a>
+            </li>
+          
+            <li>
+              <a class="nav-item nav-link" n:href="Kompletypage:">Komplety</a>
+            </li>
+
+            <li>
+              <a class="nav-item nav-link"n:href="Botypage:">Boty</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-
-    <nav>
-      <ul>
-        <li>
-          <a n:href="Homepage:">Domů</a>
-        </li>
-        
-        <li>
-          <a n:href="Skateboardingpage:">Skateboarding</a>
-        </li>
-        
-        <li>
-          <a n:href="Kompletypage:">Komplety</a>
-        </li>
-        
-        <li>
-          <a n:href="Botypage:">Boty</a>
-        </li>
-        
-        <li>
-          <a href="">Oblečení</a>
-        </li>
-      </ul>
     </nav>
   </header>
 {/block}

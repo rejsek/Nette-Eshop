@@ -5,6 +5,80 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 <style>
+    /*              Header              */
+    nav {
+      background-color: white;
+      margin-top: 0px;
+      margin-bottom: 5%;
+      margin-left: 22%;
+    }
+
+    li {
+      display: inline-block;
+      position: relative;
+    }
+
+    li a {
+      text-decoration: none;
+      color: black;
+      font-family: Arial;
+      margin-left: 70px;
+      margin-right: 70px;
+      font-size: 25px
+    }
+
+    li a:hover {
+      color: black;
+    }
+    
+    li a:before {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: black;
+      transition: width 0.25s ease-out;
+    }
+
+    li a:hover:before {
+      width: 100%;
+      left: 0;
+      right: auto;
+    }
+
+    .tlacitko {
+      text-align: right;
+      margin-right: 1%;
+      margin-top: 1%;
+    }
+    
+    .tlacitko button {
+      background-color: #1390f0;
+  		border: none;  
+      color: #FFFFFF;
+      transition: 0.4s;
+      font-size: 19px;
+      height: 5vh;
+      border-radius: 4px;
+    }
+
+    .tlacitko button:hover {
+      opacity: 0.5;
+    }
+
+    .tlacitko button span {
+      margin: 15px;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      nav {
+        margin-left: 0%;
+      }
+    }
+    /*              Header              */
+    
     .komplet {
         font-family: Arial;
         margin-left: 10%;
@@ -18,12 +92,12 @@
     }
 
     .title {
-        font-size: 30px;
+        font-size: 5vh;
         color: #1390f0;
     }
 
     .des {
-        font-size: 18px;
+        font-size: 2vh;
         margin-top: 4%;
         margin-right: 10%;
     }
@@ -37,7 +111,7 @@
         font-size: 30px;
     }
 
-    button {
+    .komplet button {
         font-family: Arial;
         margin-top: 3%;
         width: 20%;
@@ -51,10 +125,67 @@
         transition: 0.5s;
     }
 
-    button:hover {
+    .komplet button:hover {
         opacity: 0.8;
     }
+
+    /*              Footer              */
+    section {
+            border-top: solid;
+            border-width: 1px;
+            border-color: #1390f0; 
+            margin-top: 20%;
+        }
+
+        p a {
+          text-decoration: none;
+          color: black;
+          transition: 0.3s;
+        }
+
+        p a:hover {
+          color: #1390f0;
+        }
 </style>
+
+<div class="tlacitko">
+    <a n:href="Prihlasit:">
+      <button>
+          <span>
+              Přihlásit
+            </span>
+        </button>
+    </a>
+  </div>
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light ">      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <ul>
+            <li>
+              <a class="nav-item nav-link" n:href="Homepage:">Domů</a>
+            </li>
+            
+            <li>
+              <a class="nav-item nav-link" n:href="Skateboardingpage:">Skateboarding</a>
+            </li>
+          
+            <li>
+              <a class="nav-item nav-link" n:href="Kompletypage:">Komplety</a>
+            </li>
+
+            <li>
+              <a class="nav-item nav-link"n:href="Botypage:">Boty</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
 {foreach $detaily as $detail}
     
@@ -92,5 +223,73 @@
         -->
     </div>
 {/foreach}
+
+
+    <section class="">
+        <div class="container text-center text-md-start mt-5">
+        
+        <div class="row mt-3">
+            
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+                Skate shop
+            </h6>
+            
+            <p>
+                Přední prodejce skateboardů na českém trhu. Disponujeme jak prémiovými tak i cenově dostupnými díly.
+            </p>
+            </div>
+
+            
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+                Produkty
+            </h6>
+            
+            <p>
+                <a href="#!">Skateboarding</a>
+            </p>
+            
+            <p>
+                <a href="#!">Komplety</a>
+            </p>
+            
+            <p>
+                <a href="#!">Boty</a>
+            </p>
+            
+            <p>
+                <a href="#!">Oblečení</a>
+            </p>
+            </div>
+
+            
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            
+            <h6 class="text-uppercase fw-bold mb-4">
+                Užitečné odkazy
+            </h6>
+            
+            <p>
+                <a href="#!">Doprava a platba</a>
+            </p>
+            
+            <p>
+                <a n:href="vytvoritUcet:">Vytvořit účet</a>
+            </p>
+                    
+            <p>
+                <a n:href="pridatproduct:">Přidat produkt</a>
+            </p>
+            
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2021 Copyright: Daniel Riess
+    </div>
+
 
 <!--TODO Pridat modal na image, aby byl detail na obrazek-->

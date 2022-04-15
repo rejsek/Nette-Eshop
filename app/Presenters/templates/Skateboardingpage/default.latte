@@ -1,7 +1,7 @@
 {block content}
 	<style>
 		.backgroundSkate {
-			background-image: url("../Obrazky/hardware5.jpg");
+			background-image: url("../Obrazky/hardware6.jpg");
 			background-size: cover;
     		background-repeat: no-repeat;
     		height: 49vh;
@@ -22,7 +22,7 @@
 			margin-top: 2%;
 		}
 
-		button {
+		.buttons button {
 			width: 8%;
 			height: 5vh;
 			margin-right: 2%;
@@ -34,7 +34,7 @@
 			transition: 0.3s;
 		}
 
-		button:hover {
+		.buttons button:hover {
 			opacity: 0.8;
 		}
 
@@ -72,6 +72,38 @@
 		a:hover {
 			color: #1390f0;
 		}
+
+		@media only screen and (max-width: 600px) {
+			.backgroundSkate {
+				height: 30vh;
+				font-size: 30px;	
+			}
+
+			#textSkate {
+				position: static;
+				padding-top: 31%;
+				padding-left: 18%;
+			}
+
+			.buttons {
+				display: grid;
+				grid-template-columns: auto auto auto;
+				column-gap: 10px;
+				row-gap: 10px;
+			}
+			
+			.buttons button {
+				width: 100%;
+			}
+
+			.products {
+				display: grid;
+				grid-template-columns: auto;
+				padding: 0px;
+			}
+      	}
+    }
+
 
 	</style>
 	

@@ -1,7 +1,7 @@
 {block content}
 	<style>
 		.backgroundSkate {
-			background-image: url("http://cdn.shopify.com/s/files/1/0519/1388/3831/collections/nike-sb-shoes-022321.jpg?v=1622162158");
+			background-image: url("../Obrazky/boty2.jpg");
 			background-size: cover;
     		background-repeat: no-repeat;
     		height: 49vh;
@@ -12,8 +12,8 @@
 		}
 
 		#textSkate {
-			position: relative;
-			top: 25%;
+			position: absolute;
+			top: 28%;
 			left: 37%;
 		}
 
@@ -50,6 +50,38 @@
 
 		a:hover {
 			color: #1390f0;
+		}
+
+		@media only screen and (max-width: 600px) {
+			.backgroundSkate {
+				background-image: url("../Obrazky/boty2Mobil.jpg");
+				height: 30vh;
+				font-size: 30px;	
+			}
+
+			#textSkate {
+				position: static;
+				padding-top: 31%;
+				padding-left: 20%;
+			}
+
+			.buttons {
+				display: grid;
+				grid-template-columns: auto auto auto;
+				column-gap: 10px;
+				row-gap: 10px;
+			}
+			
+			.buttons button {
+				width: 100%;
+			}
+
+			.products {
+				margin-top: 10%;
+				display: grid;
+				grid-template-columns: auto;
+				padding: 0px;
+			} 
 		}
 	</style>
 	
