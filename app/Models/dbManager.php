@@ -1,16 +1,13 @@
 <?php
     namespace App\Models;
-    use App\Forms;
     use Nette;
 
     final class dbManager {
         private $database;
-        private $createForm;
         private $passwords;
 
-        public function __construct(Nette\Database\Explorer $database, Forms\CreateFormFactory $createForm, Nette\Security\Passwords $passwords) {
+        public function __construct(Nette\Database\Explorer $database, Nette\Security\Passwords $passwords) {
             $this->database = $database;
-            $this->createForm = $createForm;
             $this->passwords = $passwords;
         }
 
@@ -18,8 +15,8 @@
          * Metoda pro vypis produktu z kategorie 1, 2, 3, 4, 5, 6
          */
         
-        public function vypisProduktu() {
-            $data = $this->database->table('produkt')->select('*')->where('id_kat', [1,2,3,4,5,6])->fetchAll();
+        public function vypisProduktu(): Nette\Database\Table\Selection {
+            $data = $this->database->table('produkt')->select('*')->where('id_kat', [1,2,3,4,5,6]);
 
             return $data;
         }
@@ -28,8 +25,8 @@
          * Metoda pro vypis produktu z kategorie boty - id 7
          */
         
-        public function vypisBot() {
-            $data = $this->database->table('produkt')->select('*')->where('id_kat', 7)->fetchAll();
+        public function vypisBot(): Nette\Database\Table\Selection {
+            $data = $this->database->table('produkt')->select('*')->where('id_kat', 7);
         
             return $data;
         }
@@ -38,8 +35,8 @@
          * Metoda pro vypis produktu z kategorie komplety - id 8
          */
         
-        public function vypisComplete() {
-            $data = $this->database->table('produkt')->select('*')->where('id_kat', 8)->fetchAll();
+        public function vypisComplete(): Nette\Database\Table\Selection {
+            $data = $this->database->table('produkt')->select('*')->where('id_kat', 8);
         
             return $data;
         }
@@ -88,5 +85,9 @@
 
             $this->database->table('produkt')->insert($data);
         }
+
+        /**
+         * Metoda vrací celkový počet produktů
+         */
     }
 ?>

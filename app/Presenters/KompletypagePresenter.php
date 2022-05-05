@@ -20,8 +20,14 @@ final class KompletypagePresenter extends Nette\Application\UI\Presenter {
      * Metoda zobrazuje produkty z databáze
      */
     
-    public function renderDefault() {
-        $this->vypisProduktu();
+    public function renderDefault(int $page = 1): void {
+        $komplety = $this->dbManager->vypisComplete();
+
+        $lastPage = 0;
+        $this->template->komplety = $komplety->page($page, 9, $lastPage);
+
+        $this->template->page = $page;
+        $this->template->lastPage = $lastPage;
     }
 
     public function vypisProduktu() {

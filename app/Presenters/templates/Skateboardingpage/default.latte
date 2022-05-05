@@ -41,12 +41,12 @@
 		.products {
 			display: grid;
 			grid-template-columns: auto auto auto;
-			padding: 100px;
+			text-align: center;
+			padding-left: 5%;
+			padding-right: 5%;
 		}
 
 		.item {
-			text-align: center;
-			padding-bottom: 10px;
 			transition: 0.3s;
 		}
 
@@ -71,6 +71,11 @@
 
 		a:hover {
 			color: #1390f0;
+		}
+
+		.pages {
+			text-align: center;
+			margin-bottom: 20px;
 		}
 
 		@media only screen and (max-width: 600px) {
@@ -147,7 +152,7 @@
 			{foreach $produkty as $produkt}
 				<div class="item">
 					<a n:href="Detailpage:show, $produkt->id_pr">
-						<img src='{$produkt->obrazek}' height="70%" width="70%">
+						<img src='{$produkt->obrazek}' height="73%" width="70%">
 							
 						<p style="font-size: 20px;">{$produkt->nazev_pr}</p>
 						<p style="font-size: 17px;">{$produkt->cena} Kč</p>
@@ -157,4 +162,19 @@
 		
 		</div>
 	{/block}
+
+	<div class="pages">
+		Strana {$page} z {$lastPage}
+
+		{if $page < $lastPage}
+			&nbsp;|&nbsp;
+			<a n:href="default, $page + 1">Další</a>
+		{/if}
+
+		{if $page >= 2}
+			&nbsp;|&nbsp;
+		    <a n:href="default, $page - 1">Předchozí</a>
+		{/if}
+	</div>
+
 {/block}

@@ -52,6 +52,11 @@
 			color: #1390f0;
 		}
 
+		.pages {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
 		@media only screen and (max-width: 600px) {
 			.backgroundSkate {
 				background-image: url("../Obrazky/boty2Mobil.jpg");
@@ -107,4 +112,18 @@
 		
 		</div>
 	{/block}
+
+	<div class="pages">
+		Strana {$page} z {$lastPage}
+
+		{if $page < $lastPage}
+			&nbsp;|&nbsp;
+			<a n:href="default, $page + 1">Další</a>
+		{/if}
+
+		{if $page >= 2}
+			&nbsp;|&nbsp;
+		    <a n:href="default, $page - 1">Předchozí</a>
+		{/if}
+	</div>
 {/block}
