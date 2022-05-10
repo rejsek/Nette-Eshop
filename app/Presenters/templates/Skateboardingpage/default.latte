@@ -78,6 +78,19 @@
 			margin-bottom: 20px;
 		}
 
+		.pages a button {
+			height: 4vh;
+			width: 3%;
+			border: 1px solid;
+			border-radius: 4px;
+			background-color: white;
+			transition: 0.5s;
+		}
+
+		.pages a button:hover{
+			color: #1390f0;
+		}
+
 		@media only screen and (max-width: 600px) {
 			.backgroundSkate {
 				height: 30vh;
@@ -93,7 +106,7 @@
 			.buttons {
 				display: grid;
 				grid-template-columns: auto auto auto;
-				column-gap: 10px;
+				column-gap: 10%;
 				row-gap: 10px;
 			}
 			
@@ -105,10 +118,14 @@
 				display: grid;
 				grid-template-columns: auto;
 				padding: 0px;
+				row-gap: 15px;
 			}
-      	}
-    }
 
+			.pages a button {
+				width: 7%;
+			}
+			
+      	}
 
 	</style>
 	
@@ -164,16 +181,52 @@
 	{/block}
 
 	<div class="pages">
-		Strana {$page} z {$lastPage}
-
 		{if $page < $lastPage}
-			&nbsp;|&nbsp;
-			<a n:href="default, $page + 1">Další</a>
-		{/if}
+			<a n:href="default, $page + 0">
+				<button>
+					<
+				</button>
+			</a>
 
-		{if $page >= 2}
-			&nbsp;|&nbsp;
-		    <a n:href="default, $page - 1">Předchozí</a>
+			Strana {$page} z {$lastPage}
+			
+			<a n:href="default, $page + 1">
+				<button>
+					>
+				</button>
+			</a>
+
+			
+
+			{elseif $page <= 1 || $page == $lastPage}
+				<a n:href="default, $page - 1">
+					<button>
+						<
+					</button>
+				</a>
+
+				Strana {$page} z {$lastPage}
+
+				<a n:href="default, $page + 0">
+					<button>
+						>
+					</button>
+				</a>
+			
+			{else}
+				<a n:href="default, $page - 1">
+					<button>
+						<
+					</button>
+				</a>
+				
+				Strana {$page} z {$lastPage}
+
+				<a n:href="default, $page + 1">
+					<button>
+						>
+					</button>
+				</a>
 		{/if}
 	</div>
 

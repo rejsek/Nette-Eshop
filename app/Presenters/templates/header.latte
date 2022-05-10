@@ -73,8 +73,39 @@
     }
     
     @media only screen and (max-width: 600px) {
+      .tlacitko {
+        float: right;
+      }
+
+      .tlacitko button {
+        font-size: 15px;
+        height: 40px;
+      }
+      
       nav {
-        margin-left: 0%;
+        margin-left: 1%;
+      }
+      
+      li a {
+        margin-left: 2px;
+        margin-right: 2px;
+      }
+
+      li a:before {
+        content: "";
+        position: none;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0px;
+        background-color: black;
+        transition: none;
+      }
+
+      li a:hover:before {
+        width: 0;
+        left: 0;
+        right: none;
       }
     }
 

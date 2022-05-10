@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace App;
 
 use Nette\Bootstrap\Configurator;
+if ('https' === getenv('HTTP_X_FORWARDED_PROTO')) {
+	\Nette\Http\Url::$defaultPorts['https'] = (int) getenv('SERVER_PORT');
+}
 
 
 class Bootstrap
