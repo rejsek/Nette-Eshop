@@ -4,7 +4,7 @@
             background-color: rgba(0, 0, 0, 0.05);
             border: 1px solid #1390f0;
             width: 50%;
-            height: 30vh;
+            height: 100%;
             margin-left: 25%;
             border-radius: 25px;
             margin-bottom: 6%;
@@ -18,14 +18,37 @@
         }
 
         .form {
-            margin-top: 5%;
+            padding-top: 4%;
             margin-left: 34%;
-            text-align: center;
         }
 
-        .required label {
+		.required label {
 			margin-right: 30px;
 		}
+
+        @media only screen and (max-width: 600px) {
+            .komplet {
+                width: 100%;
+                margin-left: 0;
+                margin-bottom: 10%;
+                padding-bottom: 2%; 
+            }    
+
+            .form {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .required label {
+                margin-left: 10px;
+                margin-top: 30px;
+		    }
+
+            input {
+                height: 5vh;
+                margin-top: 30px;
+            }
+        }
         
     </style>
     
