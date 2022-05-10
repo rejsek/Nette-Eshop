@@ -1,15 +1,21 @@
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
 <style>
     /*              Header              */
-    nav {
+   nav {
       background-color: white;
       margin-top: 0px;
-      margin-bottom: 5%;
+      margin-bottom: 50px;
       margin-left: 22%;
     }
 
@@ -73,17 +79,49 @@
     }
     
     @media only screen and (max-width: 600px) {
+      .tlacitko {
+        float: right;
+      }
+
+      .tlacitko button {
+        font-size: 15px;
+        height: 400px;
+      }
+      
       nav {
-        margin-left: 0%;
+        margin-left: 1%;
+      }
+      
+      li a {
+        margin-left: 2px;
+        margin-right: 2px;
+      }
+
+      li a:before {
+        content: "";
+        position: none;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 0px;
+        background-color: black;
+        transition: none;
+      }
+
+      li a:hover:before {
+        width: 0;
+        left: 0;
+        right: none;
       }
     }
     /*              Header              */
     
+    /*              Body              */
     .komplet {
         font-family: Arial;
         margin-left: 10%;
     }
-    
+
     img {
         float: left;
         cursor: pointer;
@@ -129,6 +167,23 @@
         opacity: 0.8;
     }
 
+    @media only screen and (max-width: 600px) {
+      img {
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        height: auto;
+      }
+
+      .komplet button {
+        margin-left: 0;
+        width: 90%;
+        margin-top: 10%;        
+      }
+    }
+    /*              Body              */
+
     /*              Footer              */
     section {
             border-top: solid;
@@ -146,6 +201,7 @@
         p a:hover {
           color: #1390f0;
         }
+    /*              Footer              */
 </style>
 
 <div class="tlacitko">
@@ -197,14 +253,14 @@
 
 {foreach $detaily as $detail}
     
-        <img src='{$detail->obrazek}' height="65%" width=auto data-toggle="modal" data-target="#exampleModalCenter">
+        <img src='{$detail->obrazek}' height="auto" width="40%" data-toggle="modal" data-target="#exampleModalCenter">
         <!-- Modal -->
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
                     <!-- Obsah modalu - obrazek -->
                     <div class="modal-body">
-                        <img src='{$detail->obrazek}' height="auto" width=90% style="margin-left: 5%;">
+                        <img src='{$detail->obrazek}' height="100%" width="90%" style="margin-left: 5%;">
                     </div>
                 </div>
             </div>
@@ -301,3 +357,4 @@
 
 
 <!--TODO Pridat modal na image, aby byl detail na obrazek-->
+</html>
